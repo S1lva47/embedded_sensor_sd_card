@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 48.23, "left": 307.27, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": 271.4,
+      "left": -19.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24.85,
+      "left": 211.2,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "sd1:DO", "uno:12", "green", [ "h19.2", "v-115.09", "h-278.4" ] ],
+    [ "sd1:GND", "uno:GND.3", "black", [ "h19.2", "v144.11", "h-220.8" ] ],
+    [ "sd1:SCK", "uno:13", "blue", [ "h48", "v-144.01", "h-307.2" ] ],
+    [ "sd1:VCC", "uno:5V", "red", [ "h38.4", "v134.54", "h-259.2" ] ],
+    [ "sd1:DI", "uno:11", "orange", [ "h67.2", "v-182.49", "h-307.2" ] ],
+    [ "ntc1:GND", "uno:GND.2", "black", [ "h57.6", "v-134.9" ] ],
+    [ "ntc1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "ntc1:OUT", "uno:A0", "green", [ "h96", "v-154.2" ] ],
+    [ "sd1:CS", "r1:2", "yellow", [ "h48", "v-134.34" ] ],
+    [ "r1:1", "uno:10", "yellow", [ "v0", "h-57.6" ] ]
+  ],
+  "dependencies": {}
+}
